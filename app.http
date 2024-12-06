@@ -1,0 +1,35 @@
+GET http://localhost:3004/
+
+###
+
+POST http://localhost:3004/register 
+Content-Type: application/json
+
+{
+    "username":"sanni",
+    "fullname":"sandani",
+    "password":"9059",
+    "email":"sanni@gmail.com",
+    "gender":"Male"
+}
+
+
+###
+
+POST http://localhost:3004/login 
+Content-Type: application/json
+
+{
+    "username":"sanni",
+    "password":"9059"
+}
+
+
+###
+POST http://localhost:3004/forgotPassword
+Content-Type: application/json
+
+{
+    "email":"sanni@gmail.com",
+    "password":"9059"
+}
