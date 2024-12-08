@@ -30,7 +30,7 @@ app.get("/", (req, res) => {
 })
 
 app.post("/register", async (req, res) => {
-    const { username, email, password, fullname, gender } = req.body
+    const { username, email, password, } = req.body
     const existingUserByUsername = await User.findOne({ username: username });
     const existingUserByEmail = await User.findOne({ email: email });
 
@@ -47,8 +47,6 @@ app.post("/register", async (req, res) => {
         const newUser = await User.create({
             username,
             email,
-            fullname,
-            gender,
             password: hashedPassword
         });
         res.status(201).send({ message: 'User created successfully!', user: { username: newUser.username, email: newUser.email } });
